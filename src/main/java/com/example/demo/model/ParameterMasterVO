@@ -1,0 +1,53 @@
+package com.example.demo.model;
+
+import java.time.LocalDateTime;
+
+
+public class ParameterMasterVO {
+	
+	private int masterId;
+
+	
+	private int parameterId;
+	
+	
+	private String parameterDesc;
+	
+	
+	private String userId;
+	
+	
+	private LocalDateTime createdOn;
+	
+	public int getMasterId() {
+		return masterId;
+	}
+	public void setMasterId(int masterId) {
+		this.masterId = masterId;
+	}
+	
+	public int getParameterId() {
+		return parameterId;
+	}
+	public void setParameterId(int parameterId) {
+		this.parameterId = parameterId;
+	}
+	public String getParameterDesc() {
+		return parameterDesc;
+	}
+	public void setParameterDesc(String parameterDesc) {
+		this.parameterDesc = parameterDesc;
+	}
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+	public LocalDateTime getCreatedOn() {
+		return createdOn;
+	}
+	public void setCreatedOn(LocalDateTime createdOn) {
+		this.createdOn = createdOn;
+	}
+}
