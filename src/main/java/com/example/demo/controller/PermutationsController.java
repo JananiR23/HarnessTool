@@ -22,43 +22,35 @@ import com.example.demo.vo.TestoutputAir;
 public class PermutationsController {
 
 	@PostMapping("/scenarios")
-	List<Testoutput> permutations(@RequestBody List<Testinput> testinputList) {
+	List<Testoutput> permutations(@RequestBody Testinput testinputList) {
 		List<Testoutput> outputList = new ArrayList<>();
 
 		final List<List<Integer>> lists = new ArrayList<List<Integer>>();
-
-		final List<List<Integer>> list3 = new ArrayList<List<Integer>>();
-
-		final List<Integer> list0 = new ArrayList<Integer>();
-		final List<Integer> list1 = new ArrayList<Integer>();
-		final List<Integer> list2 = new ArrayList<Integer>();
+	
 
 		final Set<Integer> set0 = new HashSet();
 		final Set<Integer> set1 = new HashSet();
 		final Set<Integer> set2 = new HashSet();
 
-		for (Testinput input : testinputList) {
-			set0.add(input.getBarrowAmount());
-			set1.add(input.getRiskFactor());
-			set2.add(input.getTermFactor());
-		}
+	
 
-		lists.add(new ArrayList<>(set0));
-		lists.add(new ArrayList<>(set1));
-		lists.add(new ArrayList<>(set2));
+		lists.add(new ArrayList<>(testinputList.getBarrowAmount()));
+		lists.add(new ArrayList<>(testinputList.getRiskFactor()));
+		lists.add(new ArrayList<>(testinputList.getTermFactor()));
 		int count = 0;
 		final List<Integer> list4 = new ArrayList<Integer>();
 
 		permute(lists, (permutation -> list4.addAll(permutation)));
+		System.out.println("list4 size::"+list4.size());
 		int j = 0;
 		for (int i = 0; i < list4.size() / 3; i++) {
 			Testoutput testOutPut = new Testoutput();
 			//testOutPut.setId(String.valueOf(count++));
 			testOutPut.setId("01"+LocalDate.now().format(DateTimeFormatter.ofPattern("yyMMdd"))+String.format("%07d", ++count));
-			testOutPut.setApplicationIdentity(testinputList.get(0).getApplicationIdentity());
-			testOutPut.setBankDivision(testinputList.get(0).getBankDivision());
-			testOutPut.setProductFamily(testinputList.get(0).getProductFamily());
-			testOutPut.setProductName(testinputList.get(0).getProductName());
+			testOutPut.setApplicationIdentity(testinputList.getApplicationIdentity());
+			testOutPut.setBankDivision(testinputList.getBankDivision());
+			testOutPut.setProductFamily(testinputList.getProductFamily());
+			testOutPut.setProductName(testinputList.getProductName());
 			testOutPut.setBarrowAmount(list4.get(j++));
 			testOutPut.setRiskFactor(list4.get(j++));
 			testOutPut.setTermFactor(list4.get(j++));
