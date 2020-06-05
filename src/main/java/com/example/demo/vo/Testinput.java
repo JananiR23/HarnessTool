@@ -1,12 +1,38 @@
 package com.example.demo.vo;
 
+import java.util.List;
+
 public class Testinput {
 	
-	private Integer barrowAmount;
+	private List<Integer> barrowAmount;
 	
-	private Integer riskFactor;
+	public List<Integer> getBarrowAmount() {
+		return barrowAmount;
+	}
+
+	public void setBarrowAmount(List<Integer> barrowAmount) {
+		this.barrowAmount = barrowAmount;
+	}
+
+	public List<Integer> getRiskFactor() {
+		return riskFactor;
+	}
+
+	public void setRiskFactor(List<Integer> riskFactor) {
+		this.riskFactor = riskFactor;
+	}
+
+	public List<Integer> getTermFactor() {
+		return termFactor;
+	}
+
+	public void setTermFactor(List<Integer> termFactor) {
+		this.termFactor = termFactor;
+	}
+
+	private List<Integer> riskFactor;
 	
-	private Integer termFactor;
+	private List<Integer> termFactor;
 	
 	private String applicationIdentity;
 
@@ -55,28 +81,6 @@ public class Testinput {
 		this.productName = productName;
 	}
 
-	public Integer getBarrowAmount() {
-		return barrowAmount;
-	}
-
-	public void setBarrowAmount(Integer barrowAmount) {
-		this.barrowAmount = barrowAmount;
-	}
-
-	public Integer getRiskFactor() {
-		return riskFactor;
-	}
-
-	public void setRiskFactor(Integer riskFactor) {
-		this.riskFactor = riskFactor;
-	}
-
-	public Integer getTermFactor() {
-		return termFactor;
-	}
-
-	public void setTermFactor(Integer termFactor) {
-		this.termFactor = termFactor;
-	}
+	
 
 }
